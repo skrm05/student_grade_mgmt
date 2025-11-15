@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "id": "d46335f7-5ca7-484b-b3be-733d5cc302e8",
+      "name": "Sanjay",
+      "rollNo": "12",
+      "attendance": "95",
+      "subjects": [
+        {
+          "name": "Javascript",
+          "grade": "89"
+        },
+        {
+          "name": "React js",
+          "grade": "85"
+        },
+        {
+          "name": "Node js",
+          "grade": "90"
+        }
+      ]
+    }
+  ]
+}
