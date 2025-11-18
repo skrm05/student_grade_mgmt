@@ -50,7 +50,7 @@ function StudentForm({ onSubmit, studentToEdit, onClose }) {
 
   const removeSubject = (index) => {
     const newSubjects = formData.subjects.filter((_, i) => i !== index);
-    // Ensure at least one subject row remains
+
     if (newSubjects.length === 0) {
       setFormData((prev) => ({ ...prev, subjects: [{ name: "", grade: "" }] }));
     } else {
@@ -73,7 +73,7 @@ function StudentForm({ onSubmit, studentToEdit, onClose }) {
         {studentToEdit ? "Edit Student" : "Add New Student"}
       </h2>
 
-      {/* --- Basic Info --- */}
+   
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label
@@ -128,7 +128,7 @@ function StudentForm({ onSubmit, studentToEdit, onClose }) {
         />
       </div>
 
-      {/* --- Subjects --- */}
+  
       <hr className="dark:border-gray-600" />
       <h3 className="text-lg font-medium">Subjects & Grades</h3>
       <div className="space-y-4 max-h-48 overflow-y-auto pr-2">
