@@ -50,7 +50,7 @@ function StudentList({ students, onEdit, onDelete }) {
   );
 }
 
-// Sub-component for a single student row
+
 function StudentItem({ student, onEdit, onDelete }) {
   return (
     <tr className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
