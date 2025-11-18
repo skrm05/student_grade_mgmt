@@ -3,8 +3,7 @@ import * as studentService from "../services/studentService.js";
 
 const router = Router();
 
-// GET /api/students
-// Get all students, with optional search query
+
 router.get("/", async (req, res, next) => {
   try {
     const { search } = req.query;
@@ -15,11 +14,10 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// POST /api/students
-// Add a new student
+
 router.post("/", async (req, res, next) => {
   try {
-    // Basic validation
+   
     if (!req.body.name || !req.body.rollNo) {
       return res
         .status(400)
@@ -32,8 +30,7 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-// GET /api/students/:id
-// Get a single student by ID
+
 router.get("/:id", async (req, res, next) => {
   try {
     const student = await studentService.getStudentById(req.params.id);
@@ -46,8 +43,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// PUT /api/students/:id
-// Update an existing student
+
 router.put("/:id", async (req, res, next) => {
   try {
     const updatedStudent = await studentService.updateStudent(
@@ -63,15 +59,14 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
-// DELETE /api/students/:id
-// Delete a student
+
 router.delete("/:id", async (req, res, next) => {
   try {
     const success = await studentService.deleteStudent(req.params.id);
     if (!success) {
       return res.status(404).json({ error: "Student not found." });
     }
-    res.status(204).send(); // 204 No Content (standard for successful delete)
+    res.status(204).send(); 
   } catch (err) {
     next(err);
   }
