@@ -4,14 +4,11 @@ export class Student {
     this.name = name;
     this.rollNo = rollNo;
     this.attendance = attendance;
-    // Ensure subjects is always an array
+   
     this.subjects = Array.isArray(subjects) ? subjects : [];
   }
 
-  /**
-   * Calculates the average grade for the student.
-   * @returns {number} The average grade, or 0 if no subjects.
-   */
+
   calculateAverage() {
     if (this.subjects.length === 0) {
       return 0;
@@ -23,10 +20,7 @@ export class Student {
     return total / this.subjects.length;
   }
 
-  /**
-   * Returns a plain object representation of the student,
-   * including the calculated average.
-   */
+
   toObjectWithAverage() {
     return {
       ...this,
